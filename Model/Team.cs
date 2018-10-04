@@ -1,6 +1,6 @@
 namespace Teams.API.Model
 {
-    public class Teams
+    public class Team
     {
         public int ID { get; set; }
 
