@@ -23,7 +23,7 @@ namespace Teams.API.Controllers
         [HttpGet("Items")]
         public async Task<IActionResult> GetAllItems()
         {
-            var itemsList = _itemRepo.GetAllItems();
+            var itemsList = await _itemRepo.GetAllItems();
 
             return Ok(itemsList);
         }
@@ -31,7 +31,7 @@ namespace Teams.API.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetItemById(int id)
         {
-            var Item = _itemRepo.GetItemById(id);
+            var Item = await _itemRepo.GetItemById(id);
 
             return Ok(Item);
         }
@@ -56,8 +56,9 @@ namespace Teams.API.Controllers
         {
             if (!await _itemRepo.DeleteItem(id))
                 return StatusCode(404);
+            var newList = await _itemRepo.GetAllItems();
 
-            return Ok();
+            return Ok(newList);
         }
     }
 }

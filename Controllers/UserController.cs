@@ -23,7 +23,7 @@ namespace Teams.API.Controllers
         [HttpGet("Users")]
         public async Task<IActionResult> GetAllUsers()
         {
-            var UsersList = _userRepo.GetAllUsers();
+            var UsersList = await _userRepo.GetAllUsers();
 
             return Ok(UsersList);
         }
@@ -31,7 +31,7 @@ namespace Teams.API.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetUserById(int id)
         {
-            var User = _userRepo.GetUsersById(id);
+            var User = await _userRepo.GetUsersById(id);
 
             return Ok(User);
         }
@@ -56,8 +56,9 @@ namespace Teams.API.Controllers
         {
             if (!await _userRepo.DeleteUsers(id))
                 return StatusCode(404);
+            var newList = await _userRepo.GetAllUsers();
 
-            return Ok();
+            return Ok(newList);
         }
     }
 }

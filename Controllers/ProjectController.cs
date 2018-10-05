@@ -26,7 +26,7 @@ namespace Teams.API.Controllers
         [HttpGet("projects")]
         public async Task<IActionResult> GetAllProjects()
         {
-            var projectsList = _projectRepo.GetAllProjects();
+            var projectsList = await _projectRepo.GetAllProjects();
 
             return Ok(projectsList);
         }
@@ -34,7 +34,7 @@ namespace Teams.API.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetProjectById(int id)
         {
-            var project = _projectRepo.GetProjectById(id);
+            var project = await _projectRepo.GetProjectById(id);
 
             return Ok(project);
         }
@@ -60,7 +60,9 @@ namespace Teams.API.Controllers
             if (!await _projectRepo.DeleteProject(id))
                 return StatusCode(404);
 
-            return Ok();
+            var newList = await _projectRepo.GetAllProjects();
+
+            return Ok(newList);
         }
     }
 }
