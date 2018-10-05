@@ -12,9 +12,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Teams.API.Data;
-using Users.API.Data;
+using Teams.API.Model;
 
-namespace Teamss.API
+namespace Teams.API
 {
     public class Startup
     {
