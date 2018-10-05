@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Teams.API.Data;
 
-namespace Teamss.API.Controllers
+namespace Teams.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

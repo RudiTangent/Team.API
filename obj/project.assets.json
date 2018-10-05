@@ -11832,11 +11832,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/rudi/Projects/Teams/Teams.API/Teamss.API.csproj",
+      "projectUniqueName": "/Users/rudi/Projects/Teams.API/Teams.API/Teamss.API.csproj",
       "projectName": "Teamss.API",
-      "projectPath": "/Users/rudi/Projects/Teams/Teams.API/Teamss.API.csproj",
+      "projectPath": "/Users/rudi/Projects/Teams.API/Teams.API/Teamss.API.csproj",
       "packagesPath": "/Users/rudi/.nuget/packages/",
-      "outputPath": "/Users/rudi/Projects/Teams/Teams.API/obj/",
+      "outputPath": "/Users/rudi/Projects/Teams.API/Teams.API/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
