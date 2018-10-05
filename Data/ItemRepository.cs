@@ -22,7 +22,7 @@ namespace Teams.API.Data
             return item;
 
         }
-        
+
         public async Task<bool> DeleteItem(int id)
         {
             var itemToRemove = await _dbContext.Items.FirstOrDefaultAsync(x => x.ID == id);
@@ -48,22 +48,12 @@ namespace Teams.API.Data
             return await _dbContext.Items.FirstOrDefaultAsync(x => x.ID == id);
         }
 
-        public Task<Projects> GetItemByName(string name)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public async Task<Items> GetItemsByName(string name)
+        public async Task<Items> GetItemByName(string name)
         {
             return await _dbContext.Items.FirstOrDefaultAsync(x => x.Name == name); 
         }
 
-        public Task<Projects> UpdateItem(Items item)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public async Task<Items> UpdateItems(Items item)
+        public async Task<Items> UpdateItem(Items item)
         {
             var itemToUpdate = await _dbContext.Items.FirstOrDefaultAsync(x => x.ID == item.ID);
             if (itemToUpdate != null)

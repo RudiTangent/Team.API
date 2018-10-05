@@ -14,8 +14,8 @@ namespace Teams.API.Data
 
          Task<bool> DeleteItem(int id);
 
-         Task<Projects> GetItemByName(string name);
+         Task<Items> GetItemByName(string name);
 
-         Task<Projects> UpdateItem(Items item);
+         Task<Items> UpdateItem(Items item);
     }
 }
