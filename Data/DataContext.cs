@@ -14,5 +14,7 @@ namespace Teams.API.Data
         public DbSet<Items> Items { get; set; }
 
         public DbSet<Users> Users { get; set;}
+
+        public DbSet<TeamProjects> TeamProjects { get; set; }
     }
 }

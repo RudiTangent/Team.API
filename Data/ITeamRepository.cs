@@ -17,5 +17,7 @@ namespace Teams.API.Data
          Task<Team> GetTeamByName(string name);
 
          Task<Team> UpdateTeam(Team team);
+
+         Task<Projects> GetTeamProjects(int id);
     }
 }

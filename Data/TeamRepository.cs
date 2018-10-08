@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Teams.API.Model;
@@ -51,6 +52,11 @@ namespace Teams.API.Data
         public async Task<Team> GetTeamByName(string name)
         {
             return await _dbContext.Teams.FirstOrDefaultAsync(x => x.Name == name); 
+        }
+
+        public async Task<Projects> GetTeamProjects(int id)
+        {
+            return null;
         }
 
         public async Task<Team> UpdateTeam(Team team)
